@@ -10,6 +10,9 @@
 		406E07EB1A75231C00FFC0BA /* ApologistToolKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 406E07EA1A75231C00FFC0BA /* ApologistToolKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		406E07F11A75231C00FFC0BA /* ApologistToolKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406E07E51A75231C00FFC0BA /* ApologistToolKit.framework */; };
 		406E07F81A75231C00FFC0BA /* ApologistToolKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406E07F71A75231C00FFC0BA /* ApologistToolKitTests.swift */; };
+		40855F5E1A7A774300D1CA87 /* SuperMailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40855F5D1A7A774300D1CA87 /* SuperMailer.swift */; };
+		40855F671A7A83FE00D1CA87 /* mail-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 40855F661A7A83FE00D1CA87 /* mail-icon.png */; };
+		40BA64CA1A85BAB300DE60AC /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BA64C91A85BAB300DE60AC /* Resource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		406E07F01A75231C00FFC0BA /* ApologistToolKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApologistToolKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		406E07F61A75231C00FFC0BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		406E07F71A75231C00FFC0BA /* ApologistToolKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApologistToolKitTests.swift; sourceTree = "<group>"; };
+		40855F5D1A7A774300D1CA87 /* SuperMailer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperMailer.swift; sourceTree = "<group>"; };
+		40855F661A7A83FE00D1CA87 /* mail-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mail-icon.png"; sourceTree = "<group>"; };
+		40BA64C91A85BAB300DE60AC /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Models/Resource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4034A64E1A77E20C00D2C4F7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				40BA64C91A85BAB300DE60AC /* Resource.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		406E07DB1A75231C00FFC0BA = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +85,8 @@
 		406E07E71A75231C00FFC0BA /* ApologistToolKit */ = {
 			isa = PBXGroup;
 			children = (
+				40855F5F1A7A774800D1CA87 /* General */,
+				4034A64E1A77E20C00D2C4F7 /* Models */,
 				406E07EA1A75231C00FFC0BA /* ApologistToolKit.h */,
 				406E07E81A75231C00FFC0BA /* Supporting Files */,
 			);
@@ -80,6 +96,7 @@
 		406E07E81A75231C00FFC0BA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				40855F661A7A83FE00D1CA87 /* mail-icon.png */,
 				406E07E91A75231C00FFC0BA /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -100,6 +117,14 @@
 				406E07F61A75231C00FFC0BA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		40855F5F1A7A774800D1CA87 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				40855F5D1A7A774300D1CA87 /* SuperMailer.swift */,
+			);
+			name = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40855F671A7A83FE00D1CA87 /* mail-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +235,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40855F5E1A7A774300D1CA87 /* SuperMailer.swift in Sources */,
+				40BA64CA1A85BAB300DE60AC /* Resource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +347,7 @@
 		406E07FC1A75231C00FFC0BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -328,12 +357,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		406E07FD1A75231C00FFC0BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -395,6 +426,7 @@
 				406E07FD1A75231C00FFC0BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		406E07FE1A75231C00FFC0BA /* Build configuration list for PBXNativeTarget "ApologistToolKitTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +435,7 @@
 				406E08001A75231C00FFC0BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
