@@ -42,10 +42,10 @@ public class SuperMailer: UIActivity, MFMailComposeViewControllerDelegate {
         var items = activityItems as NSArray
         emailer = MFMailComposeViewController()
         emailer.mailComposeDelegate = self
-        var recipient = items[2] as! String
+        var recipient = items[2] as String
         emailer.setToRecipients([recipient])
-        emailer.setMessageBody(items[1] as! String, isHTML: false )
-        emailer.setSubject(items[0] as! String)
+        emailer.setMessageBody(items[1] as String, isHTML: false )
+        emailer.setSubject(items[0] as String)
     }
     
     public override func performActivity() {
