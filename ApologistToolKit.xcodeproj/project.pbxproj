@@ -10,9 +10,9 @@
 		406E07EB1A75231C00FFC0BA /* ApologistToolKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 406E07EA1A75231C00FFC0BA /* ApologistToolKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		406E07F11A75231C00FFC0BA /* ApologistToolKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406E07E51A75231C00FFC0BA /* ApologistToolKit.framework */; };
 		406E07F81A75231C00FFC0BA /* ApologistToolKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406E07F71A75231C00FFC0BA /* ApologistToolKitTests.swift */; };
+		406EF56C1AD37753007D0338 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BA64C91A85BAB300DE60AC /* Resource.swift */; };
 		40855F5E1A7A774300D1CA87 /* SuperMailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40855F5D1A7A774300D1CA87 /* SuperMailer.swift */; };
 		40855F671A7A83FE00D1CA87 /* mail-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 40855F661A7A83FE00D1CA87 /* mail-icon.png */; };
-		40BA64CA1A85BAB300DE60AC /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BA64C91A85BAB300DE60AC /* Resource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,7 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40855F5E1A7A774300D1CA87 /* SuperMailer.swift in Sources */,
-				40BA64CA1A85BAB300DE60AC /* Resource.swift in Sources */,
+				406EF56C1AD37753007D0338 /* Resource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
