@@ -16,6 +16,7 @@ class Resource: NSObject {
     var Rating : Double!
     var Group : String!
     var Comment : String!
+    var doesMoney : Int!
     
     class func fetchResourceRecords(recordType : String ) -> NSArray {
         var publicDatabase : CKDatabase = CKContainer.defaultContainer().publicCloudDatabase
