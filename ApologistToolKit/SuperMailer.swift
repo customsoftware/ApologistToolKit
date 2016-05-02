@@ -39,10 +39,10 @@ public class SuperMailer: UIActivity, MFMailComposeViewControllerDelegate {
     
     public override func prepareWithActivityItems(activityItems: [AnyObject]) {
         // The array has: subject, body of email, addressee
-        var items = activityItems as NSArray
+        let items = activityItems as NSArray
         emailer = MFMailComposeViewController()
         emailer.mailComposeDelegate = self
-        var recipient = items[2] as! String
+        let recipient = items[2] as! String
         emailer.setToRecipients([recipient])
         emailer.setMessageBody(items[1] as! String, isHTML: false )
         emailer.setSubject(items[0] as! String)
@@ -53,10 +53,10 @@ public class SuperMailer: UIActivity, MFMailComposeViewControllerDelegate {
         caller.presentViewController(emailer, animated: true, completion: nil )
     }
     
-    public func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+    public func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         
         
-        if (result.value == MFMailComposeResultSent.value ) {
+        if (result == MFMailComposeResultSent ) {
             // Do good stuff here
         } else {
             // Handle as appropriate

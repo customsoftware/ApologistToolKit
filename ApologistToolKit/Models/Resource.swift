@@ -19,7 +19,7 @@ class Resource: NSObject {
     var doesMoney : Int!
     
     class func fetchResourceRecords(recordType : String ) -> NSArray {
-        var publicDatabase : CKDatabase = CKContainer.defaultContainer().publicCloudDatabase
+//        var publicDatabase : CKDatabase = CKContainer.defaultContainer().publicCloudDatabase
         
         return ["One","Two","Three"]
     }
