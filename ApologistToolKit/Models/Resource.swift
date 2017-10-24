@@ -11,14 +11,14 @@ import CloudKit
 
 class Resource: NSObject {
     var url : String!
-    var submitted : NSDate!
+    var submitted : Date!
     var status : String!
     var Rating : Double!
     var Group : String!
     var Comment : String!
     var doesMoney : Int!
     
-    class func fetchResourceRecords(recordType : String ) -> NSArray {
+    class func fetchResourceRecords(_ recordType : String ) -> NSArray {
 //        var publicDatabase : CKDatabase = CKContainer.defaultContainer().publicCloudDatabase
         
         return ["One","Two","Three"]

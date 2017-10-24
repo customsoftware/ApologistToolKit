@@ -9,20 +9,20 @@
 import UIKit
 import MessageUI
 
-public class SuperMailer: UIActivity, MFMailComposeViewControllerDelegate {
+open class SuperMailer: UIActivity, MFMailComposeViewControllerDelegate {
     
     var emailer : MFMailComposeViewController!
-    public var caller : UIViewController!
+    open var caller : UIViewController!
     
-    public class override func activityCategory() -> UIActivityCategory {
-        return UIActivityCategory.Share
+    open class override var activityCategory : UIActivityCategory {
+        return UIActivityCategory.share
     }
     
-    public override func activityType() -> String? {
-        return "superMailer.ToolKit.App"
-    }
+//    open override var activityType : String? {
+//        return "superMailer.ToolKit.App"
+//    }
     
-    public override func activityTitle() -> String? {
+    open override var activityTitle : String? {
         return "Super Mailer"
     }
     
@@ -33,11 +33,11 @@ public class SuperMailer: UIActivity, MFMailComposeViewControllerDelegate {
 //        return UIImage(contentsOfFile: path!)
 //    }
     
-    public override func canPerformWithActivityItems(activityItems: [AnyObject]) -> Bool {
+    open override func canPerform(withActivityItems activityItems: [Any]) -> Bool {
         return true
     }
     
-    public override func prepareWithActivityItems(activityItems: [AnyObject]) {
+    open override func prepare(withActivityItems activityItems: [Any]) {
         // The array has: subject, body of email, addressee
         let items = activityItems as NSArray
         emailer = MFMailComposeViewController()
@@ -48,20 +48,20 @@ public class SuperMailer: UIActivity, MFMailComposeViewControllerDelegate {
         emailer.setSubject(items[0] as! String)
     }
     
-    public override func performActivity() {
+    open override func perform() {
         // This is where we send the email
-        caller.presentViewController(emailer, animated: true, completion: nil )
+        caller.present(emailer, animated: true, completion: nil )
     }
     
-    public func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+    open func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         
         
-        if (result == MFMailComposeResultSent ) {
+        if (result == MFMailComposeResult.sent ) {
             // Do good stuff here
         } else {
             // Handle as appropriate
         }
         
-        caller.dismissViewControllerAnimated(true , completion: nil )
+        caller.dismiss(animated: true , completion: nil )
     }
 }
